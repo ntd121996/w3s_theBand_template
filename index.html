@@ -72,14 +72,73 @@
                 <i class="section-slogan">We love music</i>
                 <p id="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 
+                <div id="memberlist">
+                    <div class="member-item">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/Member/bandmember.jpg" alt="Name" class="member-img  ">
+                    </div>
+
+                    <div class="member-item">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/Member/bandmember.jpg" alt="Name" class="member-img  ">
+                    </div>
+
+                    <div class="member-item">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/Member/bandmember.jpg" alt="Name" class="member-img  ">
+                    </div>
+                    <div class="clear"></div>
+                </div>
             </div>
 
             <!-- Tour -->
-            <div class="section-content">
-                <h3 class="section-heading">TOUR DATES</h3>
-                <i class="section-slogan">Remember to book your tickets!</i>
-                
-                
+            <div id="tour-section">
+                <!-- Tour ticket -->
+                <div class="section-content">
+                    <h3 class="section-heading text-white">TOUR DATES</h3>
+                    <i class="section-slogan text-white ">Remember to book your tickets!</i>
+                    <ul class="tour-list">
+                        <li>September <span class="sold-out ">Sold out</span></li>
+                        <li>October <span class="sold-out">Sold out</span></li>
+                        <li>November <span class="quantity">3</span></li>
+                    </ul>
+
+                <!-- Places -->
+                <div class="place-list">
+                    <div class="place-item">
+                        <img src="./assets/img/Tour/newyork.jpg" alt="New York" class="place-item-img">
+                        <div class="place-item-content">
+                            <h3 class="place-item-name">New York</h3>
+                            <p class="place-item-time">Fri 27 Nov 2016</p>
+                            <p class="place-item-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <button class="js-buy-btn place-item-btn">Buy Tickets</button>
+                        </div>
+                    </div>
+
+                    <div class="place-item">
+                        <img src="./assets/img/Tour/paris.jpg" alt="New York" class="place-item-img">
+                        <div class="place-item-content">
+                            <h3 class="place-item-name">Paris</h3>
+                            <p class="place-item-time">Fri 27 Nov 2016</p>
+                            <p class="place-item-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <button class="js-buy-btn place-item-btn">Buy Tickets</button>
+                        </div>
+                    </div>
+
+                    <div class="place-item">
+                        <img src="./assets/img/Tour/sanfran.jpg" alt="New York" class="place-item-img">
+                        <div class="place-item-content">
+                            <h3 class="place-item-name">San Francisco</h3>
+                            <p class="place-item-time">Fri 27 Nov 2016</p>
+                            <p class="place-item-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <button class="js-buy-btn place-item-btn">Buy Tickets</button>
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+
+                </div>
             </div>
 
             <!-- Contact -->
@@ -99,11 +158,47 @@
 
         </div>
     </div>
+
+    <!-- Modal buy ticket -->
+    <div id="modal">
+        <div class="modal-container">
+            <i class="modal-close ti-close js-close-modal"></i>
+            <header class="modal-heading">
+                <i class="ti-bag"></i>Tickets
+            </header>
+            <div class="modal-body">
+                
+                <label for="modal-quantity" class="modal-label">
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+
+                <input type="text" id="modal-quantity" class="modal-input" placeholder="How many?">
+                
+                <label for="modal-email" class="modal-label">
+                    <i class="ti-user"></i>
+                    Send To</label>
+                <input type="text" id="modal-email" class="modal-input" placeholder="Enter email">
+                
+                <button class="pay-btn">PAY<i class="ti-check"></i></button>
+
+            </div>
+            <div class="modal-footer">
+                Need <a href="#">help?</a>
+            </div>
+            
+        </div>
+    </div>
     
 
     <!-- javascript -->
     <script>
-        slideShow();
+        start();
+        
+        function start()
+        {
+            slideShow();
+        }
         function slideShow()
         {
             var count = 0;
@@ -126,6 +221,18 @@
             }, 10000);
             
         }
+    </script>
+    <script>
+        var buyButtons = document.getElementsByClassName('js-buy-btn');
+        var ticketModal = document.getElementById('modal');
+        var closeTicketModal = document.querySelector('.js-close-modal');
+        for (var buyBtn of buyButtons)
+        {
+            buyBtn.addEventListener("click", () => ticketModal.style.display = 'flex');
+        }
+        closeTicketModal.addEventListener('click',() => ticketModal.style.display = 'none');
+        
+
     </script>
 </body>
 
