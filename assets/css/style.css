@@ -8,6 +8,7 @@
 }
 html {
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 body {
     max-width: 2000px;
@@ -19,6 +20,64 @@ body {
 .text-white {
     color: #fff !important;
 }
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.row::after
+{
+    display: block;
+    content: "";
+    clear: both;
+}
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.col-third {
+    width: 33.33333%;
+}
+.col-half {
+    width: 50%;
+}
+.text-center{
+    text-align: center !important;
+}
+.border{
+    border : 1px solid #ccc !important;
+}
+
+.display-flex {
+    display: flex !important;
+}
+.padding-64
+{
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+}
+.padding-32
+{
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+}
+
+.btn {
+    display: inline-block;
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+
+
 #wrapper {
 
 }
@@ -39,7 +98,7 @@ body {
 #nav, .subnav{
     list-style-type: none;
 }
-#nav li {
+#nav > li {
     display: inline-block;
     position: relative;
 }
@@ -53,6 +112,7 @@ body {
     display: block;
     line-height: 47px;
     padding: 0px 24px;
+    font-size: 15px;
  
 }
 
@@ -191,14 +251,12 @@ body {
 }
 
 #content #memberlist {
-    padding: 32px 0px;
+    padding-top: 32px;
+    padding-left: 32px;
     
 }
-#content .member-item {
-    float: left;
-    width: 33.33333%;
-    text-align: center;
-}
+
+
 #content .member-name {
     font-size: 15px;
     margin: 15px 0px;
@@ -240,8 +298,10 @@ body {
 }
 
 .place-list {
-    margin: 32px -8px 48px;
+    margin-top: 32px;
+    margin-bottom: 48px;
 }
+
 
 .place-list .place-item {
     float:left;
@@ -280,20 +340,9 @@ body {
     line-height: 1.4;
 }
 
-.place-list .place-item-btn {
-    display: inline-block;
-    color: #fff;
-    background-color: #000;
-    text-decoration: none;
-    padding: 11px 16px;
-    border: none;
-}
 
-.place-list .place-item-btn:hover {
-    color: #000;
-    background-color: #ccc;
 
-}
+
 
 div#modal {
     position: fixed;
@@ -305,6 +354,7 @@ div#modal {
     display: none;
     align-items: center;
     justify-content: center;
+    animation: slidein ease .5s;
 }
 
 .modal-container {
@@ -350,7 +400,6 @@ div#modal {
     font-size: 15px;
     padding: 15px;
     width: 100%;
-    border: 1px solid #ccc;
 }
 
 button.pay-btn {
@@ -378,7 +427,64 @@ button i {
 .modal-footer a {
     color: #2196F3;
 }
+@keyframes slidein {
+    from {
+        transform: translateY(-100px);
+        opacity: 0.3;
+      }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    
+}
+#contact .container-info{
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+#contact .contact-info{
+    font-size: 18px;
+    line-height: 1.7;
 
+}
+#contact .contact-icon {
+    width: 30px;
+    display: inline-block;
+}
+#contact .contact-from{
+    font-size: 15px;
+}
+#contact .form-control{
+    padding: 12px 8px 12px;
+}
+#contact .form-message{
+    margin-top: 8px;
+    width: 100%;
+}
+#contact .contact-submit{
+    float:right;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.map-img{
+    width: 100%;
+}
 #footer {
-
+    font-size: 15px;
+    color: rgba(0,0,0,0.5);
+}
+#footer a{
+    color: rgba(0,0,0,0.5);
+}
+.footer-link > a{
+    text-decoration: none;
+}
+#footer i {
+    font-size: 24px;
+}
+#footer a:hover{
+    color: rgba(0,0,0,0.3);
+}
+.footer-right{
+    margin: 15px 0px;
 }
