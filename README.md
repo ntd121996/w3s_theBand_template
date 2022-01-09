@@ -31,3 +31,10 @@ B4: Hoàn thiện
 + Kích thước 
 + Màu sắc
 + Kiểu dáng (tròn, vuông ,tam giác)
+
+
+
+- media querry : px -> em
++ PC : >= 1024px
++ tablet : >= 740px  < 1024 px
++ Mobile : < 740px

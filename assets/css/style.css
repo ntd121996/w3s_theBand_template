@@ -221,8 +221,10 @@ body {
 }
 #content .section-content{
     width: 800px;
-    padding: 64px 0px;
+    max-width: 100%;
+    padding: 64px 16px;
     margin: 0px auto;
+
 }
 
 #content .section-slogan,
@@ -354,13 +356,14 @@ div#modal {
     display: none;
     align-items: center;
     justify-content: center;
-    animation: slidein ease .5s;
+    animation: slidein ease .3s;
 }
 
 .modal-container {
     position: relative;
     background-color: #fff;
     width: 900px;
+    max-width: 100%;
     min-height: 200px;
 }
 
@@ -455,8 +458,11 @@ button i {
     font-size: 15px;
 }
 #contact .form-control{
-    padding: 12px 8px 12px;
+    padding: 12px 0px;
+    padding-left: 8px;
+    width: 100%;
 }
+
 #contact .form-message{
     margin-top: 8px;
     width: 100%;
@@ -487,4 +493,19 @@ button i {
 }
 .footer-right{
     margin: 15px 0px;
+}
+
+
+/* Mobile : max-width < 739px */
+@media screen and (max-width: 46.1875em){
+
+}
+
+/* Tablet :  min-width >= 740px and max-width < 1024px */
+@media screen and  (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+}
+/* PC : >= 1024px */
+@media screen and (max-width: 64em) {
+
 }
