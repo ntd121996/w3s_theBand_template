@@ -38,6 +38,10 @@
             </div>
             <!-- End Search -->
 
+            <div class="menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
+
 
         </div>
 
@@ -73,17 +77,17 @@
                 <p id="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 
                 <div id="memberlist" class="row padding-32">
-                    <div class="col col-third text-center">
+                    <div class="col col-third text-center member">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/Member/bandmember.jpg" alt="Name" class="member-img  ">
                     </div>
 
-                    <div class="col col-third text-center">
+                    <div class="col col-third text-center member">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/Member/bandmember.jpg" alt="Name" class="member-img  ">
                     </div>
 
-                    <div class="col col-third   text-center">
+                    <div class="col col-third   text-center member">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/Member/bandmember.jpg" alt="Name" class="member-img  ">
                     </div>
@@ -105,7 +109,7 @@
 
                 <!-- Places -->
                 <div class=" row place-list">
-                    <div class="col col-third">
+                    <div class="col col-third place">
                         <img src="./assets/img/Tour/newyork.jpg" alt="New York" class="place-item-img">
                         <div class="place-item-content">
                             <h3 class="place-item-name">New York</h3>
@@ -115,7 +119,7 @@
                         </div>
                     </div>
 
-                    <div class="col col-third">
+                    <div class="col col-third place">
                         <img src="./assets/img/Tour/paris.jpg" alt="New York" class="place-item-img">
                         <div class="place-item-content">
                             <h3 class="place-item-name">Paris</h3>
@@ -125,7 +129,7 @@
                         </div>
                     </div>
 
-                    <div class="col col-third">
+                    <div class="col col-third place">
                         <img src="./assets/img/Tour/sanfran.jpg" alt="New York" class="place-item-img">
                         <div class="place-item-content">
                             <h3 class="place-item-name">San Francisco</h3>
@@ -151,7 +155,7 @@
                         <p><i class="contact-icon ti-mobile"></i>Phone: +00 151515</p>
                         <p><i class="contact-icon ti-email"></i>Email: mail@mail.com</p>
                     </div>
-                    <div class="col col-half">
+                    <div class="col col-half input">
                         <form action="" class="contact-from">
                             <div class="row">
                                 <div class="col col-half">
@@ -226,6 +230,13 @@
     </div>
     
 
+
+
+</body>
+
+
+</html>
+
     <!-- javascript -->
     <script>
         start();
@@ -257,6 +268,7 @@
             
         }
     </script>
+    <!-- Open modal when click ticket -->
     <script>
         var buyButtons = document.getElementsByClassName('js-buy-btn');
         var ticketModal = document.getElementById('modal');
@@ -270,6 +282,38 @@
         ticketModal.addEventListener('click',() => ticketModal.classList.remove('display-flex'));
         ticketModalContainer.addEventListener('click',(event) => event.stopPropagation());
     </script>
-</body>
 
-</html>
+    <!-- Menu onClick -->
+    <script>
+        var menuBtn = document.querySelector('.menu-btn');
+        var navBar = document.querySelector('#header');
+        let isClosed = true;
+        console.log(menuBtn);
+        // Toggle click button
+        if(menuBtn){
+            menuBtn.addEventListener('click',()=>{
+                if(isClosed){
+                    navBar.style.height = 'auto'
+                }
+                else{
+                    navBar.style.height = null;
+                }
+                isClosed = !isClosed;
+            });
+        }
+
+        // Click menu item close header
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+        
+        for (const index in menuItems) {
+            const menuItem = menuItems[index]
+            if(menuItem){
+                menuItem.addEventListener('click',()=>{
+                navBar.style.height = null;
+                isClosed = !isClosed;
+            }); 
+            }
+
+
+        }
+    </script>
